@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MultiUserAddressBook.master.cs" Inherits="Content_MultiUserAddressBook" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="~/Content/CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/CSS/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/CSS/MyCss.css" rel="stylesheet" />
+    <script src="~/Content/JS/bootstrap.min.js"></script>
+
+    <asp:ContentPlaceHolder id="cphHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+  <form id="form1" runat="server">
+    <div class="container">
+      <div class="row header text-center">
+           <div class="col-md-1">
+               <asp:Image ID="imglogo" runat ="server" ImageUrl="https://www.darshan.ac.in/Content/media/DU-logo.svg" />
+           </div>
+            <div class="col-md-8">
+               <h1 style="border-width: 1px">Multi User AddressBook</h1>
+            </div>
+           <div class="col-md-3">
+              <asp:Label runat="server" ID="lblUserName" />
+              &nbsp;&nbsp;|&nbsp;&nbsp;
+              <asp:LinkButton ID="lbtnLogOut" runat="server" Text="LogOut" OnClick="lbtnLogOut_Click" />
+          </div>
+       </div>
+       <hr style="border-top: 1px solid black"/>
+         <div class="row text-center" style="font-size:25px">
+                <asp:HyperLink ID="h1Country" runat="server" Text="Country" NavigateUrl="~/AdminPanel/Country/CountryList.aspx" BackColor="White" BorderColor="White" BorderStyle="None" ForeColor="#0066FF" />
+                &nbsp;&nbsp; | &nbsp;&nbsp;
+                <asp:HyperLink ID="h1State" runat="server" Text="State" NavigateUrl="~/AdminPanel/State/StateList.aspx" BackColor="White" BorderStyle="None" ForeColor="#0066FF" />
+                &nbsp;&nbsp; | &nbsp;&nbsp;
+                <asp:HyperLink ID="h1City" runat="server" Text="City" NavigateUrl="~/AdminPanel/City/CityList.aspx" BackColor="White" BorderColor="#FFFF66" ForeColor="#0066FF" />
+                &nbsp;&nbsp; | &nbsp;&nbsp;
+                <asp:HyperLink ID="h1ContactCategory" runat="server" Text="ContactCategory" NavigateUrl="~/AdminPanel/ContactCategory/ContactCategoryList.aspx" BackColor="White" ForeColor="#0066FF" />
+                &nbsp;&nbsp; | &nbsp;&nbsp;
+                <asp:HyperLink ID="h1Contact" runat="server" Text="Contact" NavigateUrl="~/AdminPanel/Contact/ContactList.aspx" BackColor="White" ForeColor="#0066FF" />
+          </div>
+           
+       <hr style="border-top: 1px solid black"/>
+
+    <div class="row">
+       <div class="col-md-12">
+         <asp:ContentPlaceHolder id="CphMainContent" runat="server">
+         </asp:ContentPlaceHolder>
+       </div>
+     </div>
+
+    <hr style="border-top: 1px solid black"/>
+     
+      <div class="row footer">
+           <div class="col-md-12 text-center">
+               <h2>Rudra Hirdekar || 190540107074 || 190540107074@darshan.ac.in </h2>
+           </div>
+      </div>
+
+   </div>
+ </form>
+</body>
+</html>
